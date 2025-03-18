@@ -1,0 +1,226 @@
+\documentclass[a4paper,8pt]{article}
+
+\usepackage{parskip} 
+\usepackage{hologo}
+\usepackage{fontspec}
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9, top=.4in, bottom=.4in]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.42\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{1pt}{2pt}{2pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\color[HTML]{110223}%{1C033C}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+% \usepackage{times}
+
+% For underline
+\usepackage[normalem]{ulem}
+
+\setmainfont{Arial}  % Set it to whatever you like
+
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\color[HTML]{1C033C} \Huge{Mumtozbek Akhmadjonov} \\[6pt]
+\\
+\textcolor[HTML]{371e77}{\underline{\href{mailto:oltinsahifa@gmail.com}{\raisebox{-0.05\height}{\faEnvelope} oltinsahifa@gmail.com}} $|$}
+\textcolor[HTML]{371e77}{\underline{\href{mailto:akhmadzhonov.mk@phystech.edu}{\raisebox{-0.05\height}{\faEnvelope} akhmadzhonov.mk@phystech.edu}} $|$}
+\textcolor[HTML]{371e77}{\href{tel:+79256625201}{\raisebox{-0.05\height}{\faMobile} +7 (925) 662-52-01}}
+
+\textcolor[HTML]{371e77}{\underline{\href{https://github.com/mumtozee}{\raisebox{-0.05\height}{\faGithub} github.com/mumtozee}} $|$}
+\textcolor[HTML]{371e77}{\underline{\href{https://linkedin.com/in/imumtozee}{\raisebox{-0.05\height}{\faLinkedin} linkedin.com/in/imumtozee}}}
+\end{tabularx}
+
+% Education
+\section{Education}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\color[HTML]{1C033C} \textbf{Moscow Institute of Physics and Technology} & \\
+\color[HTML]{371e77} M.S. in Computer Science and Data Science & \hfill \color[HTML]{4B28A4} \textit{Sep. 2023 - Aug. 2025} \\
+\multicolumn{2}{@{}X@{}}{Relevant Courses: Computer Vision, Natural Language Processing, Reinforcement Learning} \\
+\multicolumn{2}{@{}X@{}}{GPA: 5.0/5.0, Top-1\% of the class} \\
+\color[HTML]{371e77} B.S. in Computer Science and Applied Mathematics & \hfill \color[HTML]{4B28A4} \textit{Sep. 2019 - Aug. 2023} \\
+\multicolumn{2}{@{}X@{}}{Relevant Courses: Machine Learning, Linear Algebra, Calculus I and II, Convex Optimizations,\newline \hspace*{16ex}  Probability Theory and Mathematical Statistics, Random Processes}
+\end{tabularx}
+
+%Experience
+\section{Experience}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Yandex} \\[4pt]
+\color[HTML]{371e77}\textbf{\textit{ML Engineer}}\ \hfill \color[HTML]{4B28A4} \textit{Jan. 2024 - Present} \\[5pt]
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=2em, itemsep=2pt]
+        \item Developing large vision-language models.
+        \item Reproduced ShareGPT4V VLM and further enhanced it.
+        \item Making \href{https://ya.ru/ai/art/paper-yaart-v1}{YaART} text-to-image model better by improving image captions.
+    \end{itemize}
+\end{minipage} \\
+
+\color[HTML]{371e77}\textbf{\textit{Intern ML Engineer}}\ \hfill \color[HTML]{4B28A4} \textit{Sep. 2023 - Dec. 2023} \\[5pt]
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=2em, itemsep=2pt]
+        \item Finetuned Llama 2 in a multimodal setting using speech tokens from both CommonVoice and CoVoST2 datasets to make ASR and AST. Achieved a BLEU score similar to Google's AudioPaLM-1 8B on CoVoST2.
+        \item Introduced GPTQ, a SotA int4 quantization algorithm, for the Seq2Seq ASR model from the production increasing it’s quality (WERp -2.87\% on hard samples) and inference speed. Reduced the required GPU memory by 3 times.
+    \end{itemize}
+\end{minipage}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{\uline{\href{https://deeppavlov.ai}{DeepPavlov}}} \\[4pt]
+\color[HTML]{371e77}\textbf{\textit{Junior DL Researcher}}\ \hfill \color[HTML]{4B28A4} \textit{Sep. 2022 - Jul. 2023} \\[5pt]
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=2em, itemsep=2pt]
+        \item Developed approaches to evaluate and enhance \href{https://link.springer.com/chapter/10.1007/978-3-031-19032-2_52}{Dialogue Graph Auto-Construction (DGAC)} method on different dialogue datasets. Co-authored a paper accepted to AINL 2023.
+
+        \item Outperformed the approach described in the \uline{\href{https://aclanthology.org/2020.lrec-1.73/}{paper}} on user attribute extraction and inference from dialogues with SOTA transformer architectures.
+    \end{itemize}
+\end{minipage} \\
+
+\color[HTML]{371e77}\textbf{\textit{Research Intern}}\ \hfill \color[HTML]{4B28A4} \textit{Feb. 2022 - May. 2022} \\[5pt]
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=2em, itemsep=2pt]
+        \item Achieved a similar performance using \href{https://arxiv.org/abs/1911.00536}{DialoGPT} with special tokens to the \uline{\href{https://www.dialog-21.ru/media/5761/evseevdaplusetal052.pdf}{approach}} leveraging \href{https://arxiv.org/abs/1902.02671}{projected attention layers} to control different dialogue attributes. Reviewed dozens of articles on the related topics on ArXiv.
+    \end{itemize}
+\end{minipage}
+\end{tabularx}
+
+% Publication
+\section{Publications}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\color[HTML]{1C033C} \textbf{\uline{\href{https://link.springer.com/chapter/10.1007/978-3-031-44865-2_5}{XXV International Conference on Neuroinformatics}}}\\[5pt]
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=2em, itemsep=2pt]
+        \item Co-authored a conference paper about dialogue response selection enhancement using conversational graphs.
+    \end{itemize}
+    \end{minipage}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\color[HTML]{1C033C} \textbf{\uline{\href{https://github.com/mumtozee/Documents/blob/main/rnns_dialogpt.pdf}{Neuroinformatics 2022 NN workshop}}}\\[5pt]
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=2em, itemsep=2pt]
+        \item Presented a poster describing controllable DialoGPT.
+    \end{itemize}
+    \end{minipage}
+\end{tabularx}
+
+% Projects
+\section{Projects}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\color[HTML]{1C033C} \textbf{\uline{\href{https://github.com/mumtozee/UserFeatureExtraction}{User Attribute Extraction}}}\\[5pt]
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=2em, itemsep=2pt]
+        \item Extracting structured persona infromation from conversational data.
+    \end{itemize}
+    \end{minipage}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\color[HTML]{1C033C} \textbf{\uline{\href{https://github.com/mumtozee/RLHFforGPT2}{RLHF on GPT2}}}\\[5pt]
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=2em, itemsep=2pt]
+        \item My attempt to align GPT2 using PPO, DPO and SFT on different datasets, and serve the aligned models using FastAPI and gRPC.
+    \end{itemize}
+    \end{minipage}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\color[HTML]{1C033C} \textbf{\uline{\href{https://github.com/mumtozee/PEFTforBERT}{PEFT for BERT}}}\\[5pt]
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=2em, itemsep=2pt]
+        \item My attempt to fine-tune BERT-like models on MLM task using HuggingFace PEFT.
+    \end{itemize}
+    \end{minipage}
+\end{tabularx}
+
+\section{Skills}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+    \color[HTML]{1C033C}\textbf{Languages:} \\[2pt]
+    \color[HTML]{371e77} \hspace*{4ex} Python, C, C++, Java\\[3pt]
+    \color[HTML]{1C033C}\textbf{Technologies \& Tools:} \\[2pt]
+    \color[HTML]{371e77} \hspace*{4ex} PyTorch, PyTorch Lightning, HuggingFace Transformers, Accelerate, PEFT, trl, scikit-learn, numpy, pandas\\[2pt]
+    \color[HTML]{371e77} \hspace*{4ex} matplotlib, Git, Docker, Flask, FastAPI, MapReduce (YTsaurus, Hadoop)
+\end{tabularx}
+
+% Achievements
+\section{Achievements}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+    \color[HTML]{1C033C} \textbf{OpenDoors International Student's Olympiad 2023}\\[5pt]
+    \begin{minipage}[t]{\linewidth}
+        \begin{itemize}[nosep,after=\strut, leftmargin=2em, itemsep=2pt]
+            \item \href{https://github.com/mumtozee/Documents/blob/main/opendoors_math_winner_en.pdf}{winner diploma} in Math\&AI track
+            \item \href{https://github.com/mumtozee/Documents/blob/main/opendoors_csds_winner_en.pdf}{winner diploma} in CS\&DS track
+        \end{itemize}
+    \end{minipage}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+    \color[HTML]{1C033C} \textbf{Skolkovo Hack 2022}\\[5pt]
+    \begin{minipage}[t]{\linewidth}
+        \begin{itemize}[nosep,after=\strut, leftmargin=2em, itemsep=2pt]
+            \item Top-4 with team "ProDaters".
+        \end{itemize}
+    \end{minipage}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+    \color[HTML]{1C033C} \textbf{Tinkoff \& MSU Math Contest 2021}\\[5pt]
+    \begin{minipage}[t]{\linewidth}
+        \begin{itemize}[nosep,after=\strut, leftmargin=2em, itemsep=2pt]
+            \item \href{https://github.com/mumtozee/Documents/blob/main/tinkoff_winner_diploma.pdf}{winner diploma}
+        \end{itemize}
+    \end{minipage}
+\end{tabularx}
+
+% Languages
+\section{Languages}
+\begin{tabularx}{\linewidth}{>{\centering}X >{\centering}X >{\centering}X >{\centering}X}
+Uzbek: Native & Russian: Bilingual Proficiency & English: C1 & Spanish: A2
+\end{tabularx}
+
+\section{Job Preferences}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+    \textbf{Data Science \& Machine Learning Engineer/Researcher:} \\[3pt]
+    \hspace*{4ex} NLP, Computer Vision, Conversational AI, Generative models (GPT family)
+\end{tabularx}
+\end{document}
